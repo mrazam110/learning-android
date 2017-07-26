@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -35,9 +36,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String value = et_temperature.getText().toString();
-                double doubleVal = Double.parseDouble(value);
-                String resTemp = round.format(convertToCelsius(doubleVal));
-                tv_resulttemp.setText(resTemp);
+                if (value == null || value.equals("")) {
+                    Toast.makeText(MainActivity.this, "Please Enter Temperature", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    double doubleVal = Double.parseDouble(value);
+                    String resTemp = round.format(convertToCelsius(doubleVal));
+                    tv_resulttemp.setText(resTemp);
+                }
             }
         });
 
@@ -45,9 +51,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String value = et_temperature.getText().toString();
-                double doubleVal = Double.parseDouble(value);
-                String resTemp = round.format(convertToFahrenheit(doubleVal));
-                tv_resulttemp.setText(resTemp);
+                if (value == null || value.equals("")) {
+                    Toast.makeText(MainActivity.this, "Please Enter Temperature", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    double doubleVal = Double.parseDouble(value);
+                    String resTemp = round.format(convertToFahrenheit(doubleVal));
+                    tv_resulttemp.setText(resTemp);
+                }
             }
         });
 
