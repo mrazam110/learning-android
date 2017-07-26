@@ -10,23 +10,30 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
+    TextView text;
     EditText editText;
-    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.clickMeButton);
-        editText = (EditText) findViewById(R.id.editText);
-        textView = (TextView) findViewById(R.id.textView);
+        button = (Button) findViewById(R.id.button);
+        text = (TextView) findViewById(R.id.text);
+        editText = (EditText) findViewById(R.id.edittext);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                textView.setText(editText.getText());
+            public void onClick(View view) {
+//                text.setText("Taha Naqvi");
+
+              String name = editText.getText().toString();
+              text.setText(name);
+
             }
         });
+
+
     }
+
 }
