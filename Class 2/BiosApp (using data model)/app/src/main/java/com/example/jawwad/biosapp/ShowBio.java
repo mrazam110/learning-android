@@ -28,7 +28,7 @@ public class ShowBio extends AppCompatActivity {
             position = extrs.getInt("position");
             dataModelArrayList = (ArrayList<DataModel>)extrs.getSerializable("data");
             tv_data.setText(dataModelArrayList.get(position).getDescription());
-            iv_image.setImageResource(dataModelArrayList.get(position).getImages());
+            iv_image.setImageResource(dataModelArrayList.get(position).getImage());
         }
     }
 }

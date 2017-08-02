@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         this.dataModelArrayList = settingDataModel();
         names = new ArrayList<>();
         for (int i = 0; i < 5; i++){
-            names.add(dataModelArrayList.get(i).getNames());
+            names.add(dataModelArrayList.get(i).getName());
         }
 
         adapter = new ArrayAdapter<String>(MainActivity.this, R.layout.list_item,R.id.tv_description, names);

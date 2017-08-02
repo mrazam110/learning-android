@@ -4,22 +4,22 @@ import java.io.Serializable;
 
 public class DataModel implements Serializable {
 
-    String names;
+    String name;
     String description;
-    int images;
+    int image;
 
-    public DataModel(String names, String description, int images) {
-        this.names = names;
+    public DataModel(String name, String description, int image) {
+        this.name = name;
         this.description = description;
-        this.images = images;
+        this.image = image;
     }
 
-    public String getNames() {
-        return names;
+    public String getName() {
+        return name;
     }
 
-    public void setNames(String names) {
-        this.names = names;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -30,11 +30,11 @@ public class DataModel implements Serializable {
         this.description = description;
     }
 
-    public int getImages() {
-        return images;
+    public int getImage() {
+        return image;
     }
 
-    public void setImages(int images) {
-        this.images = images;
+    public void setImage(int image) {
+        this.image = image;
     }
 }
