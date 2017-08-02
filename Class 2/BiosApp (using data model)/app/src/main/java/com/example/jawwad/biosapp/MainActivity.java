@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv_names;
     private ArrayAdapter<String> adapter;
     private DataModel model;
-    public ArrayList<DataModel> dataModelArrayList;
+    private ArrayList<DataModel> dataModelArrayList;
     private ArrayList<String> names;
 
     @Override
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        settingDataModel();
+        this.dataModelArrayList = settingDataModel();
         names = new ArrayList<>();
         for (int i = 0; i < 5; i++){
             names.add(dataModelArrayList.get(i).getNames());
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void settingDataModel() {
+    private ArrayList<DataModel> settingDataModel() {
 
-        dataModelArrayList = new ArrayList<>();
+        ArrayList<DataModel> dataModelArrayList = new ArrayList<>();
         model = new DataModel("Hazrat Muhammad s.a.w.w", "Considered by Muslims to be the last prophet sent by God to mankind. According to Muslims, God revealed to him the Quran, which is God's word and the greatest miracle.",R.drawable.muhammad_saww);
         dataModelArrayList.add(model);
         model = new DataModel("Hazrat Fatimah s.a", "Her father Muhammad called her \"a part of me\".[14] She is also regarded as \"the mother of the Imams.",R.drawable.fatimah_sa);
@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         dataModelArrayList.add(model);
         model = new DataModel("Hazrat Imam hussain a.s", "Grandson of Muhammad and his younger brother of Hasan, Husayn rejected the legitimacy of Caliph Yazid I, the son of Muawiyah. As a result, he and his family were killed in the Battle of Karbala by Yazid's forces.[16] Ever since the battle, the commemoration of Husayn ibn Ali's martyrdom has been at the core of Shia rituals and identity.",R.drawable.hussain_as);
         dataModelArrayList.add(model);
+
+        return dataModelArrayList;
 
     }
 }
